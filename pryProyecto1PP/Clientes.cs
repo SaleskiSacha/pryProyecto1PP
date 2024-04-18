@@ -21,7 +21,7 @@ namespace pryProyecto1PP
         OleDbDataAdapter adapter;
         DataSet objDataSet = new DataSet();
 
-        string cadenadeconexion = @"Provider = Microsoft.ACE.OLEDB.4.0;" + " Data Source = ..\\..\\Resources\\Clientes.accdb";
+        string cadenadeconexion = @"Provider = Microsoft.ACE.OLEDB.12.0;" + " Data Source = ..\\..\\Resources\\Clientes.accdb";
         public string estadoDeConexion = "";
         private string Nom;
         private string Pa;
