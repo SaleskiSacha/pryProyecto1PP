@@ -24,6 +24,7 @@ namespace pryProyecto1PP
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
+            
             Clientes clientes = new Clientes();
             Int32 IDcliente = Convert.ToInt32(txtID.Text); 
             clientes.Buscar(IDcliente);
@@ -34,6 +35,8 @@ namespace pryProyecto1PP
                 clientes.Apellido = (txtApellido.Text);
                 clientes.Pais = (txtNacionalidad.Text);
                 clientes.Nombre = (txtNombre.Text);
+                clientes.agregarClientes();
+                
                 MessageBox.Show("Cliente registrado con exito");
                 txtID.Text = "";
                 txtApellido.Text = "";
@@ -49,6 +52,11 @@ namespace pryProyecto1PP
                 txtNacionalidad.Text = "";
                 txtNombre.Text = "";
             }
+        }
+
+        private void frmAgregarCliente_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

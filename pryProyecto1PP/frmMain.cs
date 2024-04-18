@@ -47,6 +47,19 @@ namespace pryProyecto1PP
         private void btnListar_Click(object sender, EventArgs e)
         {
             objBaseDatos.traerDatos(dgv1);
+            
+        }
+
+        private void btnLimpiar_Click(object sender, EventArgs e)
+        {
+            dgv1.Rows.Clear();
+        }
+
+        private void btnGuardar_Click(object sender, EventArgs e)
+        {
+            Clientes clientes = new Clientes();
+            clientes.guardarArchivo();
+
         }
     }
 }

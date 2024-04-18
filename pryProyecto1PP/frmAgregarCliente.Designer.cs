@@ -64,7 +64,7 @@
             this.txtID.Location = new System.Drawing.Point(135, 25);
             this.txtID.Name = "txtID";
             this.txtID.Size = new System.Drawing.Size(100, 20);
-            this.txtID.TabIndex = 9;
+            this.txtID.TabIndex = 1;
             // 
             // label4
             // 
@@ -99,7 +99,7 @@
             this.txtNacionalidad.Location = new System.Drawing.Point(135, 130);
             this.txtNacionalidad.Name = "txtNacionalidad";
             this.txtNacionalidad.Size = new System.Drawing.Size(100, 20);
-            this.txtNacionalidad.TabIndex = 6;
+            this.txtNacionalidad.TabIndex = 4;
             // 
             // label2
             // 
@@ -115,7 +115,7 @@
             this.txtApellido.Location = new System.Drawing.Point(135, 92);
             this.txtApellido.Name = "txtApellido";
             this.txtApellido.Size = new System.Drawing.Size(100, 20);
-            this.txtApellido.TabIndex = 5;
+            this.txtApellido.TabIndex = 3;
             // 
             // label3
             // 
@@ -131,7 +131,7 @@
             this.txtNombre.Location = new System.Drawing.Point(135, 57);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(100, 20);
-            this.txtNombre.TabIndex = 4;
+            this.txtNombre.TabIndex = 2;
             // 
             // frmAgregarCliente
             // 
@@ -141,6 +141,7 @@
             this.Controls.Add(this.groupBox1);
             this.Name = "frmAgregarCliente";
             this.Text = "frmAgregarCliente";
+            this.Load += new System.EventHandler(this.frmAgregarCliente_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);

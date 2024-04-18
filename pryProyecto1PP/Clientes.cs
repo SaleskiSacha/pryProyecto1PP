@@ -15,10 +15,10 @@ namespace pryProyecto1PP
 {
     internal class Clientes
     {
-        OleDbConnection conexionBD;
-        OleDbCommand comandoBD;
+        OleDbConnection conexionBD = new OleDbConnection();
+        OleDbCommand comandoBD = new OleDbCommand();
         OleDbDataReader lectorBD;
-        OleDbDataAdapter adapter;
+        OleDbDataAdapter adapter = new OleDbDataAdapter();
         DataSet objDataSet = new DataSet();
 
         string cadenadeconexion = @"Provider = Microsoft.ACE.OLEDB.12.0;" + " Data Source = ..\\..\\Resources\\Clientes.accdb";
@@ -27,27 +27,27 @@ namespace pryProyecto1PP
         private string Pa;
         private string Ape;
         private Int32 id;
-        private string clientes = "CLIENTES";
+        private string clientes = "Cliente";
 
         public Int32 ID 
         {
-            get { return ID; }
-            set { ID = value; }
+            get { return id; }
+            set { id = value; }
         }
         public string Nombre 
         {
-            get { return Nombre; }
-            set { Nombre = value; }
+            get { return Nom; }
+            set { Nom = value; }
         }
         public string Apellido 
         {
-            get { return Apellido; }
-            set { Apellido = value; }
+            get { return Ape; }
+            set { Ape = value; }
         }
         public string Pais 
         {
-            get { return Pais; }
-            set { Pais = value; }
+            get { return Pa; }
+            set { Pa = value; }
         }
 
         public void ConectarBD()
@@ -72,10 +72,7 @@ namespace pryProyecto1PP
             comandoBD.CommandType = System.Data.CommandType.TableDirect;
             comandoBD.CommandText = "Cliente";
             lectorBD = comandoBD.ExecuteReader();
-            grilla.Columns.Add("ID", "ID");
-            grilla.Columns.Add("Apellido", "Apellido");
-            grilla.Columns.Add("Pais", "Pais");
-            grilla.Columns.Add("Nombre", "Nombre");
+           
             if (lectorBD.HasRows) 
             {
                 while (lectorBD.Read())
@@ -85,24 +82,24 @@ namespace pryProyecto1PP
             }
 
         }
-        public void agregarClientes(int varID, string varApellido, string varPais, string varNombre)
+        public void agregarClientes()
         {
             try
             {
                 conexionBD.ConnectionString = cadenadeconexion;
                 conexionBD.Open();
                 comandoBD.Connection = conexionBD;
-                comandoBD.CommandType = System.Data.CommandType.Text;
+                comandoBD.CommandType = CommandType.TableDirect;
                 comandoBD.CommandText = clientes;
                 adapter = new OleDbDataAdapter(comandoBD);
                 DataSet ds = new DataSet();
                 adapter.Fill(ds, clientes);
                 DataTable Clientes = ds.Tables[clientes];
                 DataRow Fila = Clientes.NewRow();
-                Fila["ID"] = ID;
-                Fila["Apellido"] = Apellido;
-                Fila["Pais"] = Pais;
-                Fila["Nombre"] = Nombre;
+                Fila["ID"] = id;
+                Fila["Apellido"] = Ape;
+                Fila["Pais"] = Pa;
+                Fila["Nombre"] = Nom;
                 Clientes.Rows.Add(Fila);
                 OleDbCommandBuilder HacerCompatiblesLosCambios = new OleDbCommandBuilder(adapter);
                 adapter.Update(ds, clientes);
@@ -150,6 +147,49 @@ namespace pryProyecto1PP
             {
                 MessageBox.Show(MensajeAviso.Message);
                 //throw;
+            }
+        }
+        public void guardarArchivo()
+        {
+            try
+            {
+
+                conexionBD.ConnectionString = cadenadeconexion;
+                conexionBD.Open();
+                comandoBD.Connection = conexionBD;
+                comandoBD.CommandType = CommandType.TableDirect;
+                comandoBD.CommandText = clientes;
+                OleDbDataReader DR = comandoBD.ExecuteReader();
+                using (StreamWriter sw = new StreamWriter("datos.txt", false))
+                {
+                    sw.WriteLine("Listado de clientes\n"); //n es para el salto de linea
+                    sw.WriteLine();
+                    sw.WriteLine("ID;Apellido;Pais;Nombre");
+                    if (DR.HasRows)
+                    {
+                        while (DR.Read())
+                        {
+                            sw.Write(DR.GetInt32(0));
+                            sw.Write(";");
+                            sw.Write(DR.GetString(1));
+                            sw.Write(";");
+                            sw.Write(DR.GetString(2));
+                            sw.Write(";");
+                            sw.Write(DR.GetString(3));
+                            sw.Write("\n");
+                        }
+                    }
+                    conexionBD.Close();
+                    sw.Close();
+                    MessageBox.Show("Guardado con exito");
+                }
+
+                
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.ToString());
             }
         }
 
