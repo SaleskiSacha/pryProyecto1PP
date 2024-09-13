@@ -46,7 +46,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="clsGestorTareas.cs" />
     <Compile Include="clsTareasBD.cs" />
+    <Compile Include="clsUsuario.cs" />
     <Compile Include="frmABM.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -73,6 +75,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Usuario.cs" />
     <EmbeddedResource Include="frmListado.resx">
       <DependentUpon>frmListado.cs</DependentUpon>
     </EmbeddedResource>
