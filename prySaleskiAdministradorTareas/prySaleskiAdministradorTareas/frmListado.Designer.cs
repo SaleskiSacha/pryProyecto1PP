@@ -28,12 +28,34 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.dgvTareas = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvTareas)).BeginInit();
+            this.SuspendLayout();
+            // 
+            // dgvTareas
+            // 
+            this.dgvTareas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvTareas.Location = new System.Drawing.Point(12, 12);
+            this.dgvTareas.Name = "dgvTareas";
+            this.dgvTareas.Size = new System.Drawing.Size(776, 362);
+            this.dgvTareas.TabIndex = 0;
+            // 
+            // frmListado
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.dgvTareas);
+            this.Name = "frmListado";
             this.Text = "frmListado";
+            this.Load += new System.EventHandler(this.frmListado_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvTareas)).EndInit();
+            this.ResumeLayout(false);
+
         }
 
         #endregion
+
+        private System.Windows.Forms.DataGridView dgvTareas;
     }
 }
