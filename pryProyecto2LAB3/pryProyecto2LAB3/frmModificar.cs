@@ -19,13 +19,13 @@ namespace pryProyecto2LAB3
         {
             InitializeComponent();
         }
-        clsProductos objProductos = new clsProductos();
-        private clsProductos objBaseDatos;
+        clsContactos objProductos = new clsContactos();
+        private clsContactos objBaseDatos;
         private void btnEliminar_Click(object sender, EventArgs e)
         {
             LimpiarComandos();
             Int32 Codigo = Convert.ToInt32(txtBuscar.Text);
-            clsProductos EProdcuto = new clsProductos();
+            clsContactos EProdcuto = new clsContactos();
             EProdcuto.EliminarProducto(Codigo);
             txtid.Text = "";
             txtNombre.Text = "";
@@ -68,7 +68,7 @@ namespace pryProyecto2LAB3
             string Categoria = (txtCategoria.Text);
             
 
-            clsProductos EProdcuto = new clsProductos();
+            clsContactos EProdcuto = new clsContactos();
             EProdcuto.ID_Contacto = ID;
             EProdcuto.Numero = Numero;
             EProdcuto.Nombre = Nombre;
@@ -120,14 +120,14 @@ namespace pryProyecto2LAB3
         }
         private void frmModificar_Load(object sender, EventArgs e)
         {
-            clsProductos Productos = new clsProductos();
+            clsContactos Productos = new clsContactos();
             Limpiar();
         }
 
         private void btnConsultar_Click(object sender, EventArgs e)
         {
             Int32 codi = Convert.ToInt32(txtBuscar.Text);
-            clsProductos Productos = new clsProductos();
+            clsContactos Productos = new clsContactos();
             Productos.Buscar(codi);
             if (Productos.ID_Contacto != codi)
             {

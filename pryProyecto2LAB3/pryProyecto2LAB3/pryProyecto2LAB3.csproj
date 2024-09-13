@@ -46,7 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="clsProductos.cs" />
+    <Compile Include="clsContactos.cs" />
     <Compile Include="ContactoDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -78,6 +78,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="frmAgregar.resx">
+      <DependentUpon>frmAgregar.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmListar.resx">
       <DependentUpon>frmListar.cs</DependentUpon>
     </EmbeddedResource>
@@ -95,6 +98,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="ContactoDataSet.xsc">
       <DependentUpon>ContactoDataSet.xsd</DependentUpon>
@@ -124,6 +128,7 @@
     <Content Include="Contacto.accdb">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <None Include="Resources\Contacto.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

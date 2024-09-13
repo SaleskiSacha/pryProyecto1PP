@@ -36,8 +36,10 @@
             this.barraDeEstado = new System.Windows.Forms.StatusStrip();
             this.lblStatus = new System.Windows.Forms.ToolStripStatusLabel();
             this.lblUsuarioTS = new System.Windows.Forms.ToolStripStatusLabel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.menuStrip1.SuspendLayout();
             this.barraDeEstado.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -46,7 +48,7 @@
             this.contactosToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(333, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(336, 24);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -87,9 +89,9 @@
             this.barraDeEstado.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.lblStatus,
             this.lblUsuarioTS});
-            this.barraDeEstado.Location = new System.Drawing.Point(0, 186);
+            this.barraDeEstado.Location = new System.Drawing.Point(0, 287);
             this.barraDeEstado.Name = "barraDeEstado";
-            this.barraDeEstado.Size = new System.Drawing.Size(333, 22);
+            this.barraDeEstado.Size = new System.Drawing.Size(336, 22);
             this.barraDeEstado.TabIndex = 17;
             this.barraDeEstado.Text = "statusStrip1";
             // 
@@ -105,11 +107,22 @@
             this.lblUsuarioTS.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.lblUsuarioTS.Size = new System.Drawing.Size(0, 17);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::pryProyecto2LAB3.Properties.Resources.Contacto;
+            this.pictureBox1.Location = new System.Drawing.Point(0, 27);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(336, 257);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBox1.TabIndex = 18;
+            this.pictureBox1.TabStop = false;
+            // 
             // frmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(333, 208);
+            this.ClientSize = new System.Drawing.Size(336, 309);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.barraDeEstado);
             this.Controls.Add(this.menuStrip1);
             this.Name = "frmPrincipal";
@@ -118,6 +131,7 @@
             this.menuStrip1.PerformLayout();
             this.barraDeEstado.ResumeLayout(false);
             this.barraDeEstado.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -133,6 +147,7 @@
         private System.Windows.Forms.StatusStrip barraDeEstado;
         private System.Windows.Forms.ToolStripStatusLabel lblStatus;
         private System.Windows.Forms.ToolStripStatusLabel lblUsuarioTS;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
 

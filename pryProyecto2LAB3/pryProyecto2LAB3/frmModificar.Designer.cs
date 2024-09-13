@@ -35,7 +35,6 @@
             this.lblID = new System.Windows.Forms.Label();
             this.txtCorreo = new System.Windows.Forms.TextBox();
             this.lblNumero = new System.Windows.Forms.Label();
-            this.txtCategoria = new System.Windows.Forms.TextBox();
             this.lblNombre = new System.Windows.Forms.Label();
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.lblApellido = new System.Windows.Forms.Label();
@@ -48,7 +47,10 @@
             this.btnModificar = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnGuardar = new System.Windows.Forms.Button();
+            this.dgvListado = new System.Windows.Forms.DataGridView();
+            this.txtCategoria = new System.Windows.Forms.TextBox();
             this.mrcAgregar.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvListado)).BeginInit();
             this.SuspendLayout();
             // 
             // btnConsultar
@@ -123,14 +125,6 @@
             this.lblNumero.Size = new System.Drawing.Size(44, 13);
             this.lblNumero.TabIndex = 5;
             this.lblNumero.Text = "Numero";
-            // 
-            // txtCategoria
-            // 
-            this.txtCategoria.Location = new System.Drawing.Point(132, 193);
-            this.txtCategoria.Name = "txtCategoria";
-            this.txtCategoria.Size = new System.Drawing.Size(252, 20);
-            this.txtCategoria.TabIndex = 14;
-            this.txtCategoria.TextChanged += new System.EventHandler(this.txtCategoria_TextChanged);
             // 
             // lblNombre
             // 
@@ -239,11 +233,31 @@
             this.btnGuardar.UseVisualStyleBackColor = true;
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
+            // dgvListado
+            // 
+            this.dgvListado.AllowUserToAddRows = false;
+            this.dgvListado.AllowUserToDeleteRows = false;
+            this.dgvListado.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.dgvListado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvListado.Location = new System.Drawing.Point(408, 13);
+            this.dgvListado.Name = "dgvListado";
+            this.dgvListado.Size = new System.Drawing.Size(491, 309);
+            this.dgvListado.TabIndex = 30;
+            // 
+            // txtCategoria
+            // 
+            this.txtCategoria.Location = new System.Drawing.Point(132, 189);
+            this.txtCategoria.Name = "txtCategoria";
+            this.txtCategoria.Size = new System.Drawing.Size(252, 20);
+            this.txtCategoria.TabIndex = 14;
+            this.txtCategoria.TextChanged += new System.EventHandler(this.txtCategoria_TextChanged);
+            // 
             // frmModificar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(420, 389);
+            this.ClientSize = new System.Drawing.Size(903, 389);
+            this.Controls.Add(this.dgvListado);
             this.Controls.Add(this.btnConsultar);
             this.Controls.Add(this.txtBuscar);
             this.Controls.Add(this.lblBuscar);
@@ -257,6 +271,7 @@
             this.Load += new System.EventHandler(this.frmModificar_Load);
             this.mrcAgregar.ResumeLayout(false);
             this.mrcAgregar.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvListado)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -271,7 +286,6 @@
         private System.Windows.Forms.Label lblID;
         private System.Windows.Forms.TextBox txtCorreo;
         private System.Windows.Forms.Label lblNumero;
-        private System.Windows.Forms.TextBox txtCategoria;
         private System.Windows.Forms.Label lblNombre;
         private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.Label lblApellido;
@@ -284,5 +298,7 @@
         private System.Windows.Forms.Button btnModificar;
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.Button btnGuardar;
+        private System.Windows.Forms.TextBox txtCategoria;
+        private System.Windows.Forms.DataGridView dgvListado;
     }
 }

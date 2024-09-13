@@ -10,7 +10,7 @@ using System.Data;
 
 namespace pryProyecto2Lab3
 {
-    internal class clsProductos
+    internal class clsContactos
     {
 
 
@@ -227,7 +227,7 @@ namespace pryProyecto2Lab3
                 //OleDbDataReader DR = comandoBD.ExecuteReader();
                 grilla.Rows.Clear();
                 lectorBD = comandoBD.ExecuteReader();
-                clsProductos clsProductos = new clsProductos();
+                clsContactos clsProductos = new clsContactos();
                 if (lectorBD.HasRows)
                 {
                     while (lectorBD.Read())
