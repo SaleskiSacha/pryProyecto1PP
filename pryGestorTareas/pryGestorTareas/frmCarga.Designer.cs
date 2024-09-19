@@ -1,6 +1,6 @@
-﻿namespace prySaleskiAdministradorTareas
+﻿namespace pryGestorTareas
 {
-    partial class frmPantalladeCarga
+    partial class frmCarga
     {
         /// <summary>
         /// Variable del diseñador necesaria.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPantalladeCarga));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCarga));
             this.progressBar2 = new System.Windows.Forms.ProgressBar();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
@@ -38,20 +38,19 @@
             // 
             // progressBar2
             // 
-            this.progressBar2.Location = new System.Drawing.Point(2, 254);
+            this.progressBar2.Location = new System.Drawing.Point(2, 253);
             this.progressBar2.Name = "progressBar2";
             this.progressBar2.Size = new System.Drawing.Size(371, 34);
-            this.progressBar2.TabIndex = 3;
-            this.progressBar2.Click += new System.EventHandler(this.progressBar2_Click);
+            this.progressBar2.TabIndex = 5;
             // 
             // pictureBox2
             // 
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(2, 3);
+            this.pictureBox2.Location = new System.Drawing.Point(2, 2);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(371, 245);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pictureBox2.TabIndex = 2;
+            this.pictureBox2.TabIndex = 4;
             this.pictureBox2.TabStop = false;
             // 
             // timer1
@@ -59,16 +58,16 @@
             this.timer1.Enabled = true;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // frmPantalladeCarga
+            // frmCarga
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(377, 292);
+            this.ClientSize = new System.Drawing.Size(377, 291);
             this.Controls.Add(this.progressBar2);
             this.Controls.Add(this.pictureBox2);
-            this.Name = "frmPantalladeCarga";
-            this.Text = "Pantalla de carga";
-            this.Load += new System.EventHandler(this.frmPantalladeCarga_Load);
+            this.Name = "frmCarga";
+            this.Text = "Form1";
+            this.Load += new System.EventHandler(this.frmCarga_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
 

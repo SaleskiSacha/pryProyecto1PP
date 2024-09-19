@@ -37,6 +37,7 @@ namespace prySaleskiAdministradorTareas
             }
 
         }
+        
         public string Nombre { get; set; }
         public string Descripcion { get; set; }
         public string Categoria { get; set; }
@@ -47,15 +48,7 @@ namespace prySaleskiAdministradorTareas
         
         public Int32 id { get; set; }
 
-        public clsTareasBD(string nombre, string descripcion, string categoria, string prioridad, DateTime fechaVencimiento, Int32 ID_Usuario)
-        {
-            Nombre = nombre;
-            Descripcion = descripcion;
-            Categoria = categoria;
-            Prioridad = prioridad;
-            FechaVencimiento = fechaVencimiento;
-            Completada = false; // Inicia como pendiente
-        }
+        
         private void InsertarTarea(string nombreTarea, string descripcion, string categoria, string prioridad, DateTime fechaVencimiento, int idUsuario)
         {
             // Ruta de la base de datos Access (asegúrate de colocar el archivo .accdb en la ubicación correcta)

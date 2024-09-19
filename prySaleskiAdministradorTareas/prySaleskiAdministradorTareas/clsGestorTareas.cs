@@ -18,7 +18,7 @@ namespace prySaleskiAdministradorTareas
 
         public void CrearTarea(string nombre, string descripcion, string categoria, string prioridad, DateTime fechaVencimiento, Int32 ID_Usuario)
         {
-            Tareas.Add(new clsTareasBD(nombre, descripcion, categoria, prioridad, fechaVencimiento, ID_Usuario));
+            
         }
 
         public void AsignarTarea(int tareaIndex, clsUsuario usuario)

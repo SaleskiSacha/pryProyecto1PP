@@ -33,7 +33,7 @@ namespace prySaleskiAdministradorTareas
         clsTareasBD objBaseDatos;
         private void frmPrincipal_Load(object sender, EventArgs e)
         {
-            //objBaseDatos = new clsTareasBD();
+            objBaseDatos = new clsTareasBD();
             objBaseDatos.ConectarBD();
             lblStatus.Text = objBaseDatos.EstadoDeConexion;
             lblStatus.BackColor = Color.Green;

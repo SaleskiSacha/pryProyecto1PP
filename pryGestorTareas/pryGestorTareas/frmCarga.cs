@@ -8,18 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace prySaleskiAdministradorTareas
+namespace pryGestorTareas
 {
-    public partial class frmPantalladeCarga : Form
+    public partial class frmCarga : Form
     {
-        public frmPantalladeCarga()
+        public frmCarga()
         {
             InitializeComponent();
-        }
-
-        private void progressBar2_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -40,7 +35,7 @@ namespace prySaleskiAdministradorTareas
             }
         }
 
-        private void frmPantalladeCarga_Load(object sender, EventArgs e)
+        private void frmCarga_Load(object sender, EventArgs e)
         {
 
         }
