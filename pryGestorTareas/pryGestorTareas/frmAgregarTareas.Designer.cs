@@ -47,10 +47,12 @@
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.lblDescripcion = new System.Windows.Forms.Label();
             this.mrcUsuarios = new System.Windows.Forms.GroupBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtIdU = new System.Windows.Forms.TextBox();
+            this.lblIdUsuario = new System.Windows.Forms.Label();
+            this.txtTareaAsignada = new System.Windows.Forms.TextBox();
             this.lblUsuario = new System.Windows.Forms.Label();
             this.btnAgregarUsuario = new System.Windows.Forms.Button();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.txtNombreUsuario = new System.Windows.Forms.TextBox();
             this.lblTareaAsignada = new System.Windows.Forms.Label();
             this.dgvTareas = new System.Windows.Forms.DataGridView();
             this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -252,29 +254,47 @@
             // 
             // mrcUsuarios
             // 
-            this.mrcUsuarios.Controls.Add(this.textBox1);
+            this.mrcUsuarios.Controls.Add(this.txtIdU);
+            this.mrcUsuarios.Controls.Add(this.lblIdUsuario);
+            this.mrcUsuarios.Controls.Add(this.txtTareaAsignada);
             this.mrcUsuarios.Controls.Add(this.lblUsuario);
             this.mrcUsuarios.Controls.Add(this.btnAgregarUsuario);
-            this.mrcUsuarios.Controls.Add(this.textBox5);
+            this.mrcUsuarios.Controls.Add(this.txtNombreUsuario);
             this.mrcUsuarios.Controls.Add(this.lblTareaAsignada);
             this.mrcUsuarios.Location = new System.Drawing.Point(320, 12);
             this.mrcUsuarios.Name = "mrcUsuarios";
-            this.mrcUsuarios.Size = new System.Drawing.Size(364, 94);
+            this.mrcUsuarios.Size = new System.Drawing.Size(364, 122);
             this.mrcUsuarios.TabIndex = 18;
             this.mrcUsuarios.TabStop = false;
             this.mrcUsuarios.Text = "Usuario que debera Completarla";
             // 
-            // textBox1
+            // txtIdU
             // 
-            this.textBox1.Location = new System.Drawing.Point(132, 54);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 15;
+            this.txtIdU.Location = new System.Drawing.Point(132, 28);
+            this.txtIdU.Name = "txtIdU";
+            this.txtIdU.Size = new System.Drawing.Size(100, 20);
+            this.txtIdU.TabIndex = 17;
+            // 
+            // lblIdUsuario
+            // 
+            this.lblIdUsuario.AutoSize = true;
+            this.lblIdUsuario.Location = new System.Drawing.Point(7, 35);
+            this.lblIdUsuario.Name = "lblIdUsuario";
+            this.lblIdUsuario.Size = new System.Drawing.Size(72, 13);
+            this.lblIdUsuario.TabIndex = 16;
+            this.lblIdUsuario.Text = "Id del Usuario";
+            // 
+            // txtTareaAsignada
+            // 
+            this.txtTareaAsignada.Location = new System.Drawing.Point(132, 87);
+            this.txtTareaAsignada.Name = "txtTareaAsignada";
+            this.txtTareaAsignada.Size = new System.Drawing.Size(100, 20);
+            this.txtTareaAsignada.TabIndex = 15;
             // 
             // lblUsuario
             // 
             this.lblUsuario.AutoSize = true;
-            this.lblUsuario.Location = new System.Drawing.Point(8, 30);
+            this.lblUsuario.Location = new System.Drawing.Point(6, 65);
             this.lblUsuario.Name = "lblUsuario";
             this.lblUsuario.Size = new System.Drawing.Size(83, 13);
             this.lblUsuario.TabIndex = 5;
@@ -283,7 +303,7 @@
             // btnAgregarUsuario
             // 
             this.btnAgregarUsuario.BackColor = System.Drawing.Color.GreenYellow;
-            this.btnAgregarUsuario.Location = new System.Drawing.Point(255, 51);
+            this.btnAgregarUsuario.Location = new System.Drawing.Point(264, 84);
             this.btnAgregarUsuario.Name = "btnAgregarUsuario";
             this.btnAgregarUsuario.Size = new System.Drawing.Size(94, 23);
             this.btnAgregarUsuario.TabIndex = 1;
@@ -291,17 +311,17 @@
             this.btnAgregarUsuario.UseVisualStyleBackColor = false;
             this.btnAgregarUsuario.Click += new System.EventHandler(this.btnAgregarUsuario_Click);
             // 
-            // textBox5
+            // txtNombreUsuario
             // 
-            this.textBox5.Location = new System.Drawing.Point(132, 23);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(100, 20);
-            this.textBox5.TabIndex = 11;
+            this.txtNombreUsuario.Location = new System.Drawing.Point(132, 58);
+            this.txtNombreUsuario.Name = "txtNombreUsuario";
+            this.txtNombreUsuario.Size = new System.Drawing.Size(100, 20);
+            this.txtNombreUsuario.TabIndex = 11;
             // 
             // lblTareaAsignada
             // 
             this.lblTareaAsignada.AutoSize = true;
-            this.lblTareaAsignada.Location = new System.Drawing.Point(8, 61);
+            this.lblTareaAsignada.Location = new System.Drawing.Point(7, 94);
             this.lblTareaAsignada.Name = "lblTareaAsignada";
             this.lblTareaAsignada.Size = new System.Drawing.Size(82, 13);
             this.lblTareaAsignada.TabIndex = 9;
@@ -320,9 +340,9 @@
             this.Column5,
             this.Column6,
             this.Column8});
-            this.dgvTareas.Location = new System.Drawing.Point(320, 112);
+            this.dgvTareas.Location = new System.Drawing.Point(321, 140);
             this.dgvTareas.Name = "dgvTareas";
-            this.dgvTareas.Size = new System.Drawing.Size(364, 144);
+            this.dgvTareas.Size = new System.Drawing.Size(364, 139);
             this.dgvTareas.TabIndex = 19;
             // 
             // Column7
@@ -373,9 +393,9 @@
             this.Column9,
             this.Column10,
             this.Column11});
-            this.dgvUsuarios.Location = new System.Drawing.Point(320, 257);
+            this.dgvUsuarios.Location = new System.Drawing.Point(320, 285);
             this.dgvUsuarios.Name = "dgvUsuarios";
-            this.dgvUsuarios.Size = new System.Drawing.Size(364, 136);
+            this.dgvUsuarios.Size = new System.Drawing.Size(364, 108);
             this.dgvUsuarios.TabIndex = 20;
             // 
             // Column9
@@ -453,10 +473,10 @@
         private System.Windows.Forms.Label lblDescripcion;
         private System.Windows.Forms.DateTimePicker dtpFecha;
         private System.Windows.Forms.GroupBox mrcUsuarios;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtTareaAsignada;
         private System.Windows.Forms.Label lblUsuario;
         private System.Windows.Forms.Button btnAgregarUsuario;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox txtNombreUsuario;
         private System.Windows.Forms.Label lblTareaAsignada;
         private System.Windows.Forms.ComboBox cmbPrioridad;
         private System.Windows.Forms.ComboBox cmbCategoria;
@@ -480,5 +500,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column11;
         private System.Windows.Forms.Button btnVolver;
         private System.Windows.Forms.Button btnListar;
+        private System.Windows.Forms.TextBox txtIdU;
+        private System.Windows.Forms.Label lblIdUsuario;
     }
 }

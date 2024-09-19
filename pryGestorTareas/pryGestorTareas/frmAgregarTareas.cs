@@ -16,7 +16,7 @@ namespace pryGestorTareas
         {
             InitializeComponent();
         }
-        private clsBaseDatos objBaseDatos;
+       
         private void btnAgregar_Click(object sender, EventArgs e)
         {
             clsBaseDatos clsBaseDatos = new clsBaseDatos();
@@ -36,7 +36,7 @@ namespace pryGestorTareas
 
 
                 clsBaseDatos.AgregarTareas();
-                MessageBox.Show("Producto agregado con éxito");
+                MessageBox.Show("Tarea agregada con éxito");
                 txtId_Tarea.Text = "";
                 txtNombre.Text = "";
                 cmbCategoria.SelectedIndex = 0;
@@ -45,7 +45,7 @@ namespace pryGestorTareas
             }
             else
             {
-                MessageBox.Show("Producto YA REGISTRADO");
+                MessageBox.Show("TAREA YA REGISTRADO");
                 txtId_Tarea.Text = "";
                 txtNombre.Text = "";
                 cmbCategoria.SelectedIndex = 0;
@@ -57,6 +57,7 @@ namespace pryGestorTareas
         private void frmAgregarTareas_Load(object sender, EventArgs e)
         {
             clsBaseDatos objBaseDatos = new clsBaseDatos();
+            clsUsuario objUsuario = new clsUsuario();
             objBaseDatos.ConectarBD();
         }
 
@@ -70,7 +71,15 @@ namespace pryGestorTareas
 
         private void btnAgregarUsuario_Click(object sender, EventArgs e)
         {
-
+                clsUsuario clsUsuario = new clsUsuario();
+                clsUsuario.Id_Usuario = Convert.ToInt32(txtIdU.Text);
+                clsUsuario.Nombre_Usuario = txtNombreUsuario.Text;
+                clsUsuario.Tarea_Asignada = Convert.ToInt32(txtTareaAsignada.Text);
+                clsUsuario.AgregarUsuario();
+                MessageBox.Show("Usuario agregado con éxito");
+                txtIdUsuario.Text = "";
+                txtTareaAsignada.Text = "";
+                txtNombreUsuario.Text = "";
         }
     }
 }
