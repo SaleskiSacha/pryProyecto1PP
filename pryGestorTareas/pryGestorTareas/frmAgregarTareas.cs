@@ -67,5 +67,10 @@ namespace pryGestorTareas
             objBaseDatos.ListarTareas(dgvTareas);
             objBaseDatos.ListarUsuarios(dgvUsuarios);
         }
+
+        private void btnAgregarUsuario_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

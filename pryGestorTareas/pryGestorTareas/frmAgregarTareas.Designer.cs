@@ -29,6 +29,10 @@
         private void InitializeComponent()
         {
             this.mrcAgregar = new System.Windows.Forms.GroupBox();
+            this.txtId_Tarea = new System.Windows.Forms.TextBox();
+            this.lblIdTarea = new System.Windows.Forms.Label();
+            this.lblIDU = new System.Windows.Forms.Label();
+            this.txtIdUsuario = new System.Windows.Forms.TextBox();
             this.cmbPrioridad = new System.Windows.Forms.ComboBox();
             this.cmbCategoria = new System.Windows.Forms.ComboBox();
             this.chkCompletado = new System.Windows.Forms.CheckBox();
@@ -45,13 +49,9 @@
             this.mrcUsuarios = new System.Windows.Forms.GroupBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.lblUsuario = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnAgregarUsuario = new System.Windows.Forms.Button();
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.lblTareaAsignada = new System.Windows.Forms.Label();
-            this.txtIdUsuario = new System.Windows.Forms.TextBox();
-            this.lblIDU = new System.Windows.Forms.Label();
-            this.lblIdTarea = new System.Windows.Forms.Label();
-            this.txtId_Tarea = new System.Windows.Forms.TextBox();
             this.dgvTareas = new System.Windows.Forms.DataGridView();
             this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -98,6 +98,38 @@
             this.mrcAgregar.TabIndex = 17;
             this.mrcAgregar.TabStop = false;
             this.mrcAgregar.Text = " Detalles de la Tarea";
+            // 
+            // txtId_Tarea
+            // 
+            this.txtId_Tarea.Location = new System.Drawing.Point(121, 45);
+            this.txtId_Tarea.Name = "txtId_Tarea";
+            this.txtId_Tarea.Size = new System.Drawing.Size(121, 20);
+            this.txtId_Tarea.TabIndex = 23;
+            // 
+            // lblIdTarea
+            // 
+            this.lblIdTarea.AutoSize = true;
+            this.lblIdTarea.Location = new System.Drawing.Point(6, 52);
+            this.lblIdTarea.Name = "lblIdTarea";
+            this.lblIdTarea.Size = new System.Drawing.Size(47, 13);
+            this.lblIdTarea.TabIndex = 22;
+            this.lblIdTarea.Text = "Id Tarea";
+            // 
+            // lblIDU
+            // 
+            this.lblIDU.AutoSize = true;
+            this.lblIDU.Location = new System.Drawing.Point(6, 280);
+            this.lblIDU.Name = "lblIDU";
+            this.lblIDU.Size = new System.Drawing.Size(72, 13);
+            this.lblIDU.TabIndex = 21;
+            this.lblIDU.Text = "Id del Usuario";
+            // 
+            // txtIdUsuario
+            // 
+            this.txtIdUsuario.Location = new System.Drawing.Point(121, 273);
+            this.txtIdUsuario.Name = "txtIdUsuario";
+            this.txtIdUsuario.Size = new System.Drawing.Size(121, 20);
+            this.txtIdUsuario.TabIndex = 20;
             // 
             // cmbPrioridad
             // 
@@ -222,7 +254,7 @@
             // 
             this.mrcUsuarios.Controls.Add(this.textBox1);
             this.mrcUsuarios.Controls.Add(this.lblUsuario);
-            this.mrcUsuarios.Controls.Add(this.button1);
+            this.mrcUsuarios.Controls.Add(this.btnAgregarUsuario);
             this.mrcUsuarios.Controls.Add(this.textBox5);
             this.mrcUsuarios.Controls.Add(this.lblTareaAsignada);
             this.mrcUsuarios.Location = new System.Drawing.Point(320, 12);
@@ -248,15 +280,16 @@
             this.lblUsuario.TabIndex = 5;
             this.lblUsuario.Text = "Nombre Usuario";
             // 
-            // button1
+            // btnAgregarUsuario
             // 
-            this.button1.BackColor = System.Drawing.Color.GreenYellow;
-            this.button1.Location = new System.Drawing.Point(255, 51);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(94, 23);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "Agregar";
-            this.button1.UseVisualStyleBackColor = false;
+            this.btnAgregarUsuario.BackColor = System.Drawing.Color.GreenYellow;
+            this.btnAgregarUsuario.Location = new System.Drawing.Point(255, 51);
+            this.btnAgregarUsuario.Name = "btnAgregarUsuario";
+            this.btnAgregarUsuario.Size = new System.Drawing.Size(94, 23);
+            this.btnAgregarUsuario.TabIndex = 1;
+            this.btnAgregarUsuario.Text = "Agregar";
+            this.btnAgregarUsuario.UseVisualStyleBackColor = false;
+            this.btnAgregarUsuario.Click += new System.EventHandler(this.btnAgregarUsuario_Click);
             // 
             // textBox5
             // 
@@ -273,38 +306,6 @@
             this.lblTareaAsignada.Size = new System.Drawing.Size(82, 13);
             this.lblTareaAsignada.TabIndex = 9;
             this.lblTareaAsignada.Text = "Tarea Asignada";
-            // 
-            // txtIdUsuario
-            // 
-            this.txtIdUsuario.Location = new System.Drawing.Point(121, 273);
-            this.txtIdUsuario.Name = "txtIdUsuario";
-            this.txtIdUsuario.Size = new System.Drawing.Size(121, 20);
-            this.txtIdUsuario.TabIndex = 20;
-            // 
-            // lblIDU
-            // 
-            this.lblIDU.AutoSize = true;
-            this.lblIDU.Location = new System.Drawing.Point(6, 280);
-            this.lblIDU.Name = "lblIDU";
-            this.lblIDU.Size = new System.Drawing.Size(72, 13);
-            this.lblIDU.TabIndex = 21;
-            this.lblIDU.Text = "Id del Usuario";
-            // 
-            // lblIdTarea
-            // 
-            this.lblIdTarea.AutoSize = true;
-            this.lblIdTarea.Location = new System.Drawing.Point(6, 52);
-            this.lblIdTarea.Name = "lblIdTarea";
-            this.lblIdTarea.Size = new System.Drawing.Size(47, 13);
-            this.lblIdTarea.TabIndex = 22;
-            this.lblIdTarea.Text = "Id Tarea";
-            // 
-            // txtId_Tarea
-            // 
-            this.txtId_Tarea.Location = new System.Drawing.Point(121, 45);
-            this.txtId_Tarea.Name = "txtId_Tarea";
-            this.txtId_Tarea.Size = new System.Drawing.Size(121, 20);
-            this.txtId_Tarea.TabIndex = 23;
             // 
             // dgvTareas
             // 
@@ -454,7 +455,7 @@
         private System.Windows.Forms.GroupBox mrcUsuarios;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label lblUsuario;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnAgregarUsuario;
         private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.Label lblTareaAsignada;
         private System.Windows.Forms.ComboBox cmbPrioridad;
