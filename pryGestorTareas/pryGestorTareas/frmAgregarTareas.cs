@@ -108,6 +108,8 @@ namespace pryGestorTareas
 
         private void btnGuardarCambios_Click(object sender, EventArgs e)
         {
+            clsBaseDatos MTareas = new clsBaseDatos();  
+            
             Int32 Id_Tarea = Convert.ToInt32(txtId_Tarea.Text);
             string Nombre_Tarea = txtNombre.Text;
             string Descripcion_Tarea = txtDescripcion.Text;
@@ -116,13 +118,14 @@ namespace pryGestorTareas
             bool Completada = chkCompletado.Checked;
             DateTime Fecha = dtpFecha.Value;
             Int32 Id_Usuario = Convert.ToInt32(txtIdUsuario.Text);
-            clsBaseDatos MTareas = new clsBaseDatos();
+
             
             MTareas.Nombre_Tarea = Nombre_Tarea;
             MTareas.Descripcion = Descripcion_Tarea;
             MTareas.Categoria = Categoria;
             MTareas.Prioridad = Prioridad;
             MTareas.fecha_Vencimiento = Fecha;
+            MTareas.Completada = Completada;
             MTareas.Id_Usuario = Id_Usuario;
             MTareas.ActualizarTarea(Id_Tarea);
             MessageBox.Show("cliente modificado con exito");
@@ -144,6 +147,24 @@ namespace pryGestorTareas
                 dtpFecha.Value = Convert.ToDateTime(row.Cells["Column5"].Value);
                 chkCompletado.Checked = Convert.ToBoolean(row.Cells["Column6"].Value);
             }
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            //LimpiarComandos();
+            Int32 Id_Tarea = Convert.ToInt32(txtId_Tarea.Text);
+            clsBaseDatos ETarea = new clsBaseDatos();
+            ETarea.EliminarProducto(Id_Tarea);
+            txtId_Tarea.Text = "";
+            txtNombre.Text = "";
+            cmbCategoria.SelectedIndex = 0;
+            cmbPrioridad.SelectedIndex = 0;
+            txtDescripcion.Text = "";
+        }
+
+        private void chkCompletado_CheckedChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

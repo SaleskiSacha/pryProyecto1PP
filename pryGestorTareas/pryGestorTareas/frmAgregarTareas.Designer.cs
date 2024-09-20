@@ -70,6 +70,7 @@
             this.btnVolver = new System.Windows.Forms.Button();
             this.btnListar = new System.Windows.Forms.Button();
             this.btnGuardarCambios = new System.Windows.Forms.Button();
+            this.btnEliminar = new System.Windows.Forms.Button();
             this.mrcAgregar.SuspendLayout();
             this.mrcUsuarios.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTareas)).BeginInit();
@@ -166,6 +167,7 @@
             this.chkCompletado.Size = new System.Drawing.Size(15, 14);
             this.chkCompletado.TabIndex = 17;
             this.chkCompletado.UseVisualStyleBackColor = true;
+            this.chkCompletado.CheckedChanged += new System.EventHandler(this.chkCompletado_CheckedChanged);
             // 
             // dtpFecha
             // 
@@ -447,12 +449,23 @@
             this.btnGuardarCambios.UseVisualStyleBackColor = true;
             this.btnGuardarCambios.Click += new System.EventHandler(this.btnGuardarCambios_Click);
             // 
+            // btnEliminar
+            // 
+            this.btnEliminar.Location = new System.Drawing.Point(216, 408);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(115, 23);
+            this.btnEliminar.TabIndex = 27;
+            this.btnEliminar.Text = "Eliminar Tarea";
+            this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
+            // 
             // frmAgregarTareas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkCyan;
             this.ClientSize = new System.Drawing.Size(697, 443);
+            this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnGuardarCambios);
             this.Controls.Add(this.btnListar);
             this.Controls.Add(this.btnVolver);
@@ -517,5 +530,6 @@
         private System.Windows.Forms.TextBox txtIdU;
         private System.Windows.Forms.Label lblIdUsuario;
         private System.Windows.Forms.Button btnGuardarCambios;
+        private System.Windows.Forms.Button btnEliminar;
     }
 }

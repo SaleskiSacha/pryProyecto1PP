@@ -246,6 +246,27 @@ namespace pryGestorTareas
                     throw new Exception("Error al actualizar la tarea: " + ex.Message);
                 }
             }
+
+        }
+        public void EliminarProducto(Int32 Id_Tarea)
+        {
+            try
+            {
+                string EProducto = " DELETE FROM Tareas " + "WHERE(" + Id_Tarea + "=[Id_Tarea])";
+                conexionBD.ConnectionString = cadenaDeConexion;
+                conexionBD.Open();
+                comandoBD.Connection = conexionBD;
+                comandoBD.CommandType = CommandType.Text;
+                comandoBD.CommandText = EProducto;
+                comandoBD.ExecuteNonQuery();
+                conexionBD.Close();
+                MessageBox.Show("Tarea Eliminada con éxito");
+            }
+            catch (Exception Mensaje)
+            {
+                MessageBox.Show("La tarea no se pudo eliminar " + Mensaje.Message);
+                //throw;
+            }
         }
     }
 }
