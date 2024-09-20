@@ -81,5 +81,12 @@ namespace pryGestorTareas
                 txtTareaAsignada.Text = "";
                 txtNombreUsuario.Text = "";
         }
+
+        private void btnVolver_Click(object sender, EventArgs e)
+        {
+            frmPrincipal newobj = new frmPrincipal();
+            this.Hide();
+            newobj.ShowDialog();
+        }
     }
 }
