@@ -43,6 +43,7 @@
             this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnGuardarCambios = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTareas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsuarios)).BeginInit();
             this.SuspendLayout();
@@ -153,12 +154,23 @@
             this.Column11.HeaderText = "Tarea_Asignada";
             this.Column11.Name = "Column11";
             // 
+            // btnGuardarCambios
+            // 
+            this.btnGuardarCambios.Location = new System.Drawing.Point(324, 392);
+            this.btnGuardarCambios.Name = "btnGuardarCambios";
+            this.btnGuardarCambios.Size = new System.Drawing.Size(125, 23);
+            this.btnGuardarCambios.TabIndex = 5;
+            this.btnGuardarCambios.Text = "Guardar cambios";
+            this.btnGuardarCambios.UseVisualStyleBackColor = true;
+            this.btnGuardarCambios.Click += new System.EventHandler(this.btnGuardarCambios_Click);
+            // 
             // frmListado
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkCyan;
             this.ClientSize = new System.Drawing.Size(798, 427);
+            this.Controls.Add(this.btnGuardarCambios);
             this.Controls.Add(this.dgvUsuarios);
             this.Controls.Add(this.btnVolver);
             this.Controls.Add(this.btnListar);
@@ -189,5 +201,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column10;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column11;
+        private System.Windows.Forms.Button btnGuardarCambios;
     }
 }

@@ -88,5 +88,62 @@ namespace pryGestorTareas
             this.Hide();
             newobj.ShowDialog();
         }
+        private void dgvTareas_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            // Verifica que se haya seleccionado una fila válida (no encabezados o fuera de rango)
+            if (e.RowIndex >= 0)
+            {
+                // Obtiene la fila seleccionada
+                DataGridViewRow row = dgvTareas.Rows[e.RowIndex];
+
+                // Asigna los valores de la fila a los controles de edición
+                txtNombre.Text = row.Cells["Nombre_Tarea"].Value.ToString();
+                txtDescripcion.Text = row.Cells["Descripcion"].Value.ToString();
+                cmbCategoria.SelectedItem = row.Cells["Categoria"].Value.ToString();
+                cmbPrioridad.SelectedItem = row.Cells["Prioridad"].Value.ToString();
+                dtpFecha.Value = Convert.ToDateTime(row.Cells["Fecha_Vencimiento"].Value);
+                chkCompletado.Checked = Convert.ToBoolean(row.Cells["Completada"].Value);
+            }
+        }
+
+        private void btnGuardarCambios_Click(object sender, EventArgs e)
+        {
+            Int32 Id_Tarea = Convert.ToInt32(txtId_Tarea.Text);
+            string Nombre_Tarea = txtNombre.Text;
+            string Descripcion_Tarea = txtDescripcion.Text;
+            string Categoria = Convert.ToString(cmbCategoria.Text);
+            string Prioridad = Convert.ToString(cmbPrioridad.Text);
+            bool Completada = chkCompletado.Checked;
+            DateTime Fecha = dtpFecha.Value;
+            Int32 Id_Usuario = Convert.ToInt32(txtIdUsuario.Text);
+            clsBaseDatos MTareas = new clsBaseDatos();
+            
+            MTareas.Nombre_Tarea = Nombre_Tarea;
+            MTareas.Descripcion = Descripcion_Tarea;
+            MTareas.Categoria = Categoria;
+            MTareas.Prioridad = Prioridad;
+            MTareas.fecha_Vencimiento = Fecha;
+            MTareas.Id_Usuario = Id_Usuario;
+            MTareas.ActualizarTarea(Id_Tarea);
+            MessageBox.Show("cliente modificado con exito");
+        }
+
+        private void dgvTareas_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            // Verifica que se haya seleccionado una fila válida (no encabezados o fuera de rango)
+            if (e.RowIndex >= 0)
+            {
+                // Obtiene la fila seleccionada
+                DataGridViewRow row = dgvTareas.Rows[e.RowIndex];
+
+                // Asigna los valores de la fila a los controles de edición
+                txtNombre.Text = row.Cells["Column1"].Value.ToString();
+                txtDescripcion.Text = row.Cells["Column2"].Value.ToString();
+                cmbCategoria.SelectedItem = row.Cells["Column3"].Value.ToString();
+                cmbPrioridad.SelectedItem = row.Cells["Column4"].Value.ToString();
+                dtpFecha.Value = Convert.ToDateTime(row.Cells["Column5"].Value);
+                chkCompletado.Checked = Convert.ToBoolean(row.Cells["Column6"].Value);
+            }
+        }
     }
 }

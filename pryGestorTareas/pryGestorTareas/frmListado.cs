@@ -28,12 +28,22 @@ namespace pryGestorTareas
             objBaseDatos = new clsBaseDatos();
             objBaseDatos.ConectarBD();
         }
+        private void dgvTareas_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            // Código para seleccionar y cargar la fila en los controles de edición
+
+        }
 
         private void btnVolver_Click(object sender, EventArgs e)
         {
             frmPrincipal newobj = new frmPrincipal();
             this.Hide();
             newobj.ShowDialog();
+            
+        }
+
+        private void btnGuardarCambios_Click(object sender, EventArgs e)
+        {
             
         }
     }

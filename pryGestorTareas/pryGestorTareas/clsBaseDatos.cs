@@ -210,5 +210,42 @@ namespace pryGestorTareas
                 MessageBox.Show("No se pudo registrar la Tarea", "ERROR ", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+        public void ActualizarTarea(Int32 Id_Tarea) 
+        {
+            using (OleDbConnection connection = new OleDbConnection(cadenaDeConexion))
+            {
+                try
+                {
+                    connection.Open();
+
+                    string query = "UPDATE Tareas SET " + 
+                                    " Nombre_Tarea = @Nombre_Tarea, " + 
+                                    "Descripcion = @Descripcion, " +
+                                   "Categoria = @Categoria, " + 
+                                   "Prioridad = @Prioridad," +
+                                   "fecha_Vencimiento = @fecha_Vencimiento, " +
+                                   "Completada = @Completada," + 
+                                   "Id_Usuario = @Id_Usuario " +
+                                   " WHERE Id_Tarea = @Id_Tarea";
+
+                    OleDbCommand command = new OleDbCommand(query, connection);
+
+                    command.Parameters.AddWithValue("@Nombre_Tarea", Nombre_Tarea);
+                    command.Parameters.AddWithValue("@Descripcion", Descripcion);
+                    command.Parameters.AddWithValue("@Categoria", Categoria);
+                    command.Parameters.AddWithValue("@Prioridad", Prioridad);
+                    command.Parameters.AddWithValue("@fecha_Vencimiento", fecha_Vencimiento);
+                    command.Parameters.AddWithValue("@Completada", Completada);
+                    command.Parameters.AddWithValue("@Id_Usuario", Id_Usuario);
+                    command.Parameters.AddWithValue("@Id_Tarea", Id_Tarea);
+
+                    command.ExecuteNonQuery();
+                }
+                catch (Exception ex)
+                {
+                    throw new Exception("Error al actualizar la tarea: " + ex.Message);
+                }
+            }
+        }
     }
 }

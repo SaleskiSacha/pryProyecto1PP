@@ -69,6 +69,7 @@
             this.Column11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnVolver = new System.Windows.Forms.Button();
             this.btnListar = new System.Windows.Forms.Button();
+            this.btnGuardarCambios = new System.Windows.Forms.Button();
             this.mrcAgregar.SuspendLayout();
             this.mrcUsuarios.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTareas)).BeginInit();
@@ -344,6 +345,7 @@
             this.dgvTareas.Name = "dgvTareas";
             this.dgvTareas.Size = new System.Drawing.Size(364, 139);
             this.dgvTareas.TabIndex = 19;
+            this.dgvTareas.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTareas_CellContentClick);
             // 
             // Column7
             // 
@@ -435,12 +437,23 @@
             this.btnListar.UseVisualStyleBackColor = false;
             this.btnListar.Click += new System.EventHandler(this.btnListar_Click);
             // 
+            // btnGuardarCambios
+            // 
+            this.btnGuardarCambios.Location = new System.Drawing.Point(367, 408);
+            this.btnGuardarCambios.Name = "btnGuardarCambios";
+            this.btnGuardarCambios.Size = new System.Drawing.Size(115, 23);
+            this.btnGuardarCambios.TabIndex = 26;
+            this.btnGuardarCambios.Text = "Guardar cambios";
+            this.btnGuardarCambios.UseVisualStyleBackColor = true;
+            this.btnGuardarCambios.Click += new System.EventHandler(this.btnGuardarCambios_Click);
+            // 
             // frmAgregarTareas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkCyan;
             this.ClientSize = new System.Drawing.Size(697, 443);
+            this.Controls.Add(this.btnGuardarCambios);
             this.Controls.Add(this.btnListar);
             this.Controls.Add(this.btnVolver);
             this.Controls.Add(this.dgvUsuarios);
@@ -503,5 +516,6 @@
         private System.Windows.Forms.Button btnListar;
         private System.Windows.Forms.TextBox txtIdU;
         private System.Windows.Forms.Label lblIdUsuario;
+        private System.Windows.Forms.Button btnGuardarCambios;
     }
 }
